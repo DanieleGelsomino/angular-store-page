@@ -1,0 +1,51 @@
+[
+    {
+        "id":"0",
+        "nome": "Daniele",
+        "cognome": "Gelso",
+        "email": "danigelso@gmail.com",
+        "eta": "27",
+        "indirizzo": "Via Giuseppe di Vittorio 13"
+
+    },
+    {"id":"1",
+        "nome": "Christian",
+        "cognome": "Tulbu",
+        "email": "critulbu9@gmail.com",
+        "eta": "23",
+        "indirizzo": "Via Roma 27"
+
+    },
+    {   "id":"2",
+        "nome": "Lucia",
+        "cognome": "Rossi",
+        "email": "lulu7@gmail.com",
+        "eta": "32",
+        "indirizzo": "Piazza Marconi 1"
+
+    },
+    {   "id":"3",
+        "nome": "Anna",
+        "cognome": "Romani",
+        "email": "annina16@gmail.com",
+        "eta": "50",
+        "indirizzo": "Via Francia 78"
+
+    },
+    {   "id":"4",
+        "nome": "Lucio",
+        "cognome": "Melis",
+        "email": "lucionemelo@gmail.com",
+        "eta": "30",
+        "indirizzo": "Via Giotto 26"
+
+    },
+    {   "id":"5",
+        "nome": "Mario",
+        "cognome": "Grande",
+        "email": "mariottide@gmail.com",
+        "eta": "46",
+        "indirizzo": "Via Gobetti 8"
+
+    }
+]

@@ -1,0 +1,44 @@
+[
+    {   "id":"0",
+        "titolo": "Iphone 14pro",
+        "prezzo": "€1.339",
+        "categoria": "Smartphone",
+        "n_pezzi": "100"
+
+    },
+    {   "id":"1",
+        "titolo": "Albero di natale",
+        "prezzo": "€350",
+        "categoria": "Casa & Giardino",
+        "n_pezzi": "50"
+
+    },
+    {   "id":"2",
+        "titolo": "LG G2 Oled 55\"",
+        "prezzo": "€1.900",
+        "categoria": "TV & Audio",
+        "n_pezzi": "200"
+
+    },
+    {   "id":"3",
+        "titolo": "Frullatore",
+        "prezzo": "€55",
+        "categoria": "Elettrodomestici",
+        "n_pezzi": "35"
+
+    },
+    {   "id":"4",
+        "titolo": "Occhiali Prada",
+        "prezzo": "€859",
+        "categoria": "Moda",
+        "n_pezzi": "150"
+
+    },
+    {   "id":"5",
+        "titolo": "Cyclette Sport Tech",
+        "prezzo": "€149",
+        "categoria": "Fitness",
+        "n_pezzi": "10"
+
+    }
+]
