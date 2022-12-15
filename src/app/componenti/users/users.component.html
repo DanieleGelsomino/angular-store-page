@@ -1,8 +1,8 @@
 <div class="container mt-5">
-    <h1>Registro Utenti</h1>
+
     <!-- TABELLA UTENTI -->
     <div *ngIf="!isSingleUser; else userDetails" class="mt-3">
-
+        <h1>Registro Utenti</h1>
         <mat-form-field>
             <mat-label>Cerca</mat-label>
             <input matInput (keyup)="applyFilter($event)" #input>
