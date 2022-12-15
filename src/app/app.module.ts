@@ -20,6 +20,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { TableComponent } from './componenti/table/table.component';
+import { LoaderComponent } from './componenti/loader/loader.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     StoreComponent,
     HomeComponent,
     NotfoundComponent,
+    TableComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +48,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatInputModule,
     MatCardModule,
     MatPaginatorModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

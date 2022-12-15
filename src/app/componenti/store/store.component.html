@@ -10,7 +10,7 @@
         </mat-form-field>
         <!-- / FILTER -->
 
-        <div class="mat-elevation-z8 overflow-auto" style="max-height: 500px;">
+        <div class="mat-elevation-z8 overflow-auto dg-table" style="max-height: 500px;">
             <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort
                 (matSortChange)="announceSortChange($event)">
                 <!-- Id Column -->
@@ -53,6 +53,7 @@
                     <td class="mat-cell" colspan="4">Nessun prodotto corrispondente a "{{input.value}}"</td>
                 </tr>
             </table>
+
             <!-- / TABELLA STORE -->
         </div>
         <!-- PAGINAZIONE -->
@@ -62,6 +63,10 @@
             </mat-paginator>
         </div>
         <!-- / PAGINAZIONE -->
+
+    </div>
+    <div class="mt-3">
+        <app-table [dataSource]="dataSource" [columns]="displayedColumns"></app-table>
     </div>
     <!-- CARD DETTAGLI PRODOTTO -->
     <ng-template #productDetails>

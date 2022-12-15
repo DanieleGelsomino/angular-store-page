@@ -17,7 +17,7 @@ export class StoreComponent implements OnInit, AfterViewInit {
   product: any;
   isSingleProduct!: boolean;
   singleParamProduct = this.route.snapshot.paramMap.get('id');
-  displayedColumns: string[] = ['id', 'titolo', 'prezzo', 'dettagli'];
+  displayedColumns: string[] = ['id', 'titolo', 'prezzo'];
   dataSource = new MatTableDataSource(this.productsService.getProducts());
   constructor(
     private productsService: ProductsService,
