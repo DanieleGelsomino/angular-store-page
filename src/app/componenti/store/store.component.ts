@@ -16,6 +16,7 @@ export class StoreComponent implements OnInit, AfterViewInit {
   products: any;
   product: any;
   isSingleProduct!: boolean;
+  singleParamProduct = this.route.snapshot.paramMap.get('id');
   displayedColumns: string[] = ['id', 'titolo', 'prezzo', 'dettagli'];
   dataSource = new MatTableDataSource(this.productsService.getProducts());
   constructor(
@@ -40,10 +41,10 @@ export class StoreComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    if (this.route.snapshot.paramMap.get('id')) {
+    if (this.singleParamProduct) {
       this.isSingleProduct = true;
       this.product = this.productsService.getProduct(
-        parseInt(this.route.snapshot.paramMap.get('id')!)
+        parseInt(this.singleParamProduct!)
       );
     } else {
       this.isSingleProduct = false;

@@ -16,6 +16,7 @@ export class UsersComponent implements OnInit, AfterViewInit {
   users: any;
   user: any;
   isSingleUser!: boolean;
+  singleParamUser = this.route.snapshot.paramMap.get('id');
   displayedColumns: string[] = ['id', 'nome', 'cognome', 'email', 'dettagli'];
   dataSource = new MatTableDataSource(this.usersService.getUsers());
 
@@ -42,11 +43,9 @@ export class UsersComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    if (this.route.snapshot.paramMap.get('id')) {
+    if (this.singleParamUser) {
       this.isSingleUser = true;
-      this.user = this.usersService.getUser(
-        parseInt(this.route.snapshot.paramMap.get('id')!)
-      );
+      this.user = this.usersService.getUser(parseInt(this.singleParamUser!));
     } else {
       this.isSingleUser = false;
       this.users = this.usersService.getUsers();
