@@ -9,7 +9,7 @@
             <input matInput (keyup)="applyFilter($event)" #input>
         </mat-form-field>
         <!-- / FILTER -->
-        <div class="mat-elevation-z8">
+        <div class="mat-elevation-z8 overflow-auto" style="max-height: 500px;">
             <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort
                 (matSortChange)="announceSortChange($event)">
                 <!-- Id Column -->
@@ -62,12 +62,14 @@
 
             </table>
             <!-- / TABELLA UTENTI -->
-            <!-- PAGINAZIONE -->
-            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+        </div>
+        <!-- PAGINAZIONE -->
+        <div class="mat-elevation-z8">
+            <mat-paginator [pageSizeOptions]="[5, 10, 20, 25]" showFirstLastButtons
                 aria-label="Select page of periodic elements">
             </mat-paginator>
-            <!-- / PAGINAZIONE -->
         </div>
+        <!-- / PAGINAZIONE -->
     </div>
     <!-- CARD DETTAGLI UTENTE -->
     <ng-template #userDetails>
