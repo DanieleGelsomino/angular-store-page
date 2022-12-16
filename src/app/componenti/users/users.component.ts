@@ -13,6 +13,7 @@ export class UsersComponent implements OnInit {
   user: any;
   isSingleUser!: boolean;
   isLoading = false;
+  // id:number;
   singleParamUser = this.route.snapshot.paramMap.get('id');
   displayedColumns: string[] = ['id', 'nome', 'cognome', 'email', 'dettagli'];
   dataSource = new MatTableDataSource(this.usersService.getUsers());
@@ -30,6 +31,17 @@ export class UsersComponent implements OnInit {
       this.isSingleUser = false;
       this.loadUsers();
     }
+    // const paramUsers = this.route.params.subscribe((params: Params) => {
+    //   this.id = +params['id'];
+    //   this.user = this.usersService.getUser(this.id);
+    // });
+
+    // if (paramUsers) {
+    //   this.isSingleUser = true;
+    // } else {
+    //   this.isSingleUser = false;
+    //   this.loadUsers();
+    // }
   }
 
   loadUsers() {
