@@ -23,6 +23,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { TableComponent } from './componenti/table/table.component';
 import { LoaderComponent } from './componenti/loader/loader.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HttpClientModule } from '@angular/common/http';
+import { UserDetailComponent } from './componenti/user-detail/user-detail.component';
+import { ProductsDetailComponent } from './componenti/products-detail/products-detail.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     NotfoundComponent,
     TableComponent,
     LoaderComponent,
+    UserDetailComponent,
+    ProductsDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +54,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatCardModule,
     MatPaginatorModule,
     MatProgressSpinnerModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

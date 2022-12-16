@@ -10,22 +10,22 @@ import { MatTableDataSource } from '@angular/material/table';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
 })
-export class TableComponent implements OnInit {
-  @Input() dataSource!: any;
+export class TableComponent implements AfterViewInit {
+  @Input() data!: any;
+  @Input() dati!: string;
+  @Input() singleData!: any;
   @Input() columns!: string[];
   @Input() elements!: any;
-
   displayedColumns: string[] = this.columns;
+  // dataSource = new MatTableDataSource(this.data);
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {}
-
+  ngAfterViewInit(): void {
+    this.data.sort = this.sort;
+    this.data.paginator = this.paginator;
+  }
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-
-  ngOnInit(): void {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-  }
 
   announceSortChange(sortState: Sort) {
     if (sortState.direction) {
@@ -37,6 +37,6 @@ export class TableComponent implements OnInit {
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.data.filter = filterValue.trim().toLowerCase();
   }
 }

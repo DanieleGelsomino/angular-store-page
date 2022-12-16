@@ -6,6 +6,7 @@ import users from '../../data/users.json';
 })
 export class UsersService {
   users: any = users;
+  isLoading = false;
   constructor() {}
 
   getUsers() {

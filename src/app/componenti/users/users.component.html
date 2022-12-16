@@ -1,28 +1,19 @@
 <div class="container mt-5">
-
-
-
-    <div class="mt-3">
-        <app-table [dataSource]="dataSource" [columns]="displayedColumns" [elements]="users"></app-table>
+  <!-- LOADING SPINNER -->
+  <div *ngIf="isLoading">
+    <app-loader></app-loader>
+  </div>
+  <!-- LOADING SPINNER -->
+  <!-- TABELLA UTENTI -->
+  <div *ngIf="!isSingleUser; else userDetails">
+    <div class="mt-3" *ngIf="!isLoading">
+      <app-table [data]="dataSource" [dati]="'utenti'" [columns]="displayedColumns"></app-table>
     </div>
-    <!-- CARD DETTAGLI UTENTE -->
-    <ng-template #userDetails>
-        <mat-card class="example-card">
-            <mat-card-header>
-                <mat-card-title>Dettagli Utente</mat-card-title>
-                <mat-card-subtitle><strong>Id:</strong> {{user.id}}</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-                <p><strong>Nome: </strong>{{user.nome}}</p>
-                <p><strong>Cognome: </strong>{{user.cognome}}</p>
-                <p><strong>Età: </strong>{{user.eta}}</p>
-                <p><strong>Email: </strong>{{user.email}}</p>
-                <p><strong>Indirizzo: </strong>{{user.indirizzo}}</p>
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-button routerLink="/utenti">Torna agli utenti</button>
-            </mat-card-actions>
-        </mat-card>
-    </ng-template>
-    <!-- / CARD DETTAGLI UTENTE -->
+  </div>
+  <!-- / TABELLA UTENTI -->
+  <!-- CARD DETTAGLI UTENTE -->
+  <ng-template #userDetails>
+    <app-user-detail [data]="user"></app-user-detail>
+  </ng-template>
+  <!-- / CARD DETTAGLI UTENTE -->
 </div>

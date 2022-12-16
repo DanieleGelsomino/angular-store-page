@@ -12,33 +12,19 @@ import { MatPaginator } from '@angular/material/paginator';
   templateUrl: './store.component.html',
   styleUrls: ['./store.component.scss'],
 })
-export class StoreComponent implements OnInit, AfterViewInit {
+export class StoreComponent implements OnInit {
   products: any;
   product: any;
   isSingleProduct!: boolean;
+  isLoading = false;
   singleParamProduct = this.route.snapshot.paramMap.get('id');
-  displayedColumns: string[] = ['id', 'titolo', 'prezzo'];
+  displayedColumns: string[] = ['id', 'titolo', 'prezzo', 'dettagli'];
   dataSource = new MatTableDataSource(this.productsService.getProducts());
   constructor(
     private productsService: ProductsService,
     private route: ActivatedRoute,
     private _liveAnnouncer: LiveAnnouncer
   ) {}
-
-  @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-
-  ngAfterViewInit() {
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-  }
-  announceSortChange(sortState: Sort) {
-    if (sortState.direction) {
-      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
-    } else {
-      this._liveAnnouncer.announce('Sorting cleared');
-    }
-  }
 
   ngOnInit(): void {
     if (this.singleParamProduct) {
@@ -48,11 +34,19 @@ export class StoreComponent implements OnInit, AfterViewInit {
       );
     } else {
       this.isSingleProduct = false;
-      this.products = this.productsService.getProducts();
+      this.loadProducts();
     }
   }
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  loadProducts() {
+    this.isLoading = true;
+    setTimeout(() => {
+      this.products = this.productsService.getProducts();
+      this.isLoading = false;
+    }, 1000);
   }
 }
